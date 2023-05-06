@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beijing Resort - Your Ticket</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Beijing Resort Ticket</h1>
+        <div class="ticket-details">
+            <p>Name: {{ name }}</p>
+            <p>Date: {{ date }}</p>
+            <p>Number of tickets: {{ count }}</p>
+        </div>
+        <a href="/">Go back to ticket grabbing</a>
+    </div>
+</body>
+</html>

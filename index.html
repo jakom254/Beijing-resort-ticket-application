@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beijing Resort Ticket System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Beijing Resort</h1>
+        <h2>{{ available_tickets }} Tickets Available</h2>
+        <form action="/" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" min="{{ min_date }}" max="{{ max_date }}" required>
+
+            <label for="count">How many tickets do you want to grab?</label>
+            <input type="number" id="count" name="count" min="1" required>
+
+            <input type="submit" value="Grab Tickets">
+        </form>
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
